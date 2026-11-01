@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Список справ — Firebase (ЛР 20)</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { background: #f4f7fb; }
+    .todo-card { max-width: 720px; margin: 65px auto; border: 0; border-radius: 18px; box-shadow: 0 12px 35px #1d35571a; }
+    .list-group-item { padding: 15px; }
+    .todo-text { overflow-wrap: anywhere; }
+    .empty-message { color: #6c757d; text-align: center; padding: 20px; }
+  </style>
+</head>
+<body>
+<main class="container">
+  <section class="card todo-card p-4">
+    <h1 class="h2 mb-3">Мій список справ</h1>
+    <div class="mb-3" aria-live="polite">
+      <span class="badge text-bg-primary me-2">Усього: <span id="item-count">0</span></span>
+      <span class="badge text-bg-warning">Невиконаних: <span id="unchecked-count">0</span></span>
+    </div>
+    <div id="status" class="alert alert-info py-2" role="status" aria-live="polite">Завантаження справ із бази даних...</div>
+    <div id="error" class="alert alert-danger py-2" role="alert" hidden></div>
+    <button id="add-button" class="btn btn-primary mb-3 align-self-start" type="button" onclick="newTodo()" disabled>+ Нова справа</button>
+    <ul id="todo-list" class="list-group" aria-label="Список справ"></ul>
+    <p id="empty-message" class="empty-message" hidden>Список порожній. Додайте першу справу!</p>
+    <p class="text-secondary small mt-3 mb-0">Справи зберігаються у Firebase Realtime Database.</p>
+  </section>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
